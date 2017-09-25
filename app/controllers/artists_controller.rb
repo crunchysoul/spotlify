@@ -3,7 +3,7 @@ class ArtistsController < ApplicationController
 
   # GET /artists
   # GET /artists.json
-  def index
+  def index # - action: index
     @artists = Artist.all
   end
 
