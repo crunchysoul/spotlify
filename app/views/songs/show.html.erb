@@ -1,24 +1,32 @@
-<p id="notice"><%= notice %></p>
+<body class="<%= years @song.release_at %>">
+  <p id="notice"><%= notice %></p>
 
-<p>
+  <p>
   <strong>Name:</strong>
   <%= @song.name %>
-</p>
+  </p>
 
-<p>
+  <p>
   <strong>Artist:</strong>
-  <%= @song.artist.name %>
-</p>
+  <%= link_to @song.artist.name, @song.artist %>
+  </p>
 
-<p>
+  <p>
   <strong>Duration:</strong>
   <%= format_duration @song.duration %>
-</p>
+  </p>
 
-<p>
+  <p>
   <strong>Release at:</strong>
   <%= @song.release_at %>
-</p>
+  </p>
 
-<%= link_to 'Edit', edit_song_path(@song) %> |
-<%= link_to 'Back', songs_path %>
+  <p>
+  <strong>Show Counter:</strong>
+  <%= @song.impressionist_count %> 
+  </p>
+
+  <%= link_to 'Edit', edit_song_path(@song) %> |
+  <%= link_to 'Back', :back %>
+  <%# <%= link_to 'Back to Song Library', songs_path %>
+</body>

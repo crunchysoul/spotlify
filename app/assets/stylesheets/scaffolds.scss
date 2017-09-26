@@ -1,16 +1,29 @@
+$base00: #000;
+
 body {
+  padding: 0;
+  margin: 0;
   background-color: #fff;
   color: #333;
-  margin: 33px;
   font-family: verdana, arial, helvetica, sans-serif;
-  font-size: 13px;
-  line-height: 18px;
+  font-size: 20px;
+  // line-height: 18px;
 }
 
 p, ol, ul, td {
+  padding: 0;
+  margin: 0;
   font-family: verdana, arial, helvetica, sans-serif;
-  font-size: 13px;
-  line-height: 18px;
+  // font-size: 13px;
+  line-height: 24px;
+}
+
+h1 {
+  font-size: 2em;
+}
+
+h2 {
+  font-size: 1.5em;
 }
 
 pre {
@@ -20,6 +33,11 @@ pre {
 }
 
 a {
+  
+  margin: 0 auto;
+
+  background-color: #red;
+
   color: #000;
 
   &:visited {
@@ -81,4 +99,19 @@ div {
 
 label {
   display: block;
+}
+
+.sixties { background-color: red; }
+.seventies { background-color: #f3f3f3; }
+.eighties { background-color: lightblue; }
+.nineties { background-color: cyan; }
+.zero { background-color: green; }
+.tenth { background-color: yellow; }
+
+table {
+  padding: 0;
+  margin: 0 auto;
+  width: 100%;
+  text-align: center;
+  font-size: 1em;
 }

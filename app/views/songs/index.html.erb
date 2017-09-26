@@ -2,17 +2,35 @@
 
 <h1>Songs</h1>
 
-<% @songs.each do |song| %>
-  <div>
-    <h1><%= song.name %></h1>
-    <p><%= song.artist.name %></p>
-    <p><%= format_duration song.duration %></p>
-    <p><%= song.release_at %></p>
-    <p><%= link_to 'Show', song %></p>
-    <p><%= link_to 'Edit', edit_song_path(song) %></p>
-    <p><%= link_to 'Destroy', song, method: :delete, data: { confirm: 'Are you sure?' } %></p> </div>
-<% end %>
+<table class="table">
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Artist</th>
+      <th>Duration</th>
+      <th>Release at</th>
+      <th>Hit Counter</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @songs.each do |song| %>
+      <tr class="<%= years song.release_at %>">
+        <td><%= song.name %></td>
+        <td><%= song.artist.name %></td>
+        <td><%= format_duration song.duration %></td>
+        <td><%= song.release_at %></td>
+        <td><%= song.impressionist_count %></td>  
+        <td><%= link_to 'Show', song, class: 'btn btn-primary btn-sm' %></td>
+        <td><%= link_to 'Edit', edit_song_path(song), class: 'btn btn-primary btn-sm' %></td>
+        <td><%= link_to 'Destroy', song, method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-danger btn-sm' %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
 
 <br>
 
+<%= link_to 'All Artists', artists_path %>
 <%= link_to 'New Song', new_song_path %>
